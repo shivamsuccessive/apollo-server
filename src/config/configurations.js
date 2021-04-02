@@ -5,7 +5,7 @@ dotenv.config();
 const configApp = {
     server : {
         PORT : process.env.PORT
-    },
+    }
 };
 
-module.exports =  configApp;
+module.exports = configApp;

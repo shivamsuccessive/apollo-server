@@ -1,5 +1,12 @@
-# import User from './user/types.graphql';
-
 type Query {
     getMyProfile : User
+    test : String
+    getAllTrainees : [Trainee]
+    getTraineeById(id: ID!) : Trainee
 }
+
+type Mutation {
+    createTrainee(firstname : String, lastname: String, email : String) : String
+    updateTrainee(traineeId: ID!, firstname : String, lastname : String, email : String) : Trainee
+    deleteTrainee(traineeId : ID!) : String
+} 

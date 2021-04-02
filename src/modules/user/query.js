@@ -1,13 +1,14 @@
-const userResolvers = {
-   
-    getMyProfile : () => 
-        {
-            return {
-                    id : 101,
-                    name : 'Test',
-                    email : 'Test@gmail.com'
-            }
-        }    
+const Query = {
+    getMyProfile : ()=> ({
+        id : 101,
+        name : 'shivam',
+        email : 'shivam@gmail.com'
+    }),
+
+    test :()=> 'this is test query!',
 }
 
-module.exports = userResolvers;
+const userResolver = {
+    Query
+}
+module.exports = userResolver;
