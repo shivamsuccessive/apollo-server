@@ -4,3 +4,7 @@ type Trainee {
     lastname : String
     email : String
 }
+
+type Subscription {
+  createTrainee: Trainee
+}

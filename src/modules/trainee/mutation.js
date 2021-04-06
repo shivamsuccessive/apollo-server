@@ -1,13 +1,23 @@
 // const { find } = require('core-js/core/array');
 const { argsToArgsConfig } = require('graphql/type/definition');
 const {trainee} = require('./../../service/user');
+const pubsub = require('./pubsub');
+
 const Mutation = {
     createTrainee: (root, args, context, info)=>{
-        return trainee.create({
+        let result = trainee.create({
             firstname : args.firstname,
             lastname : args.lastname,
             email : args.email
         })
+
+        pubsub.publish('CREATE_TRAINEE', {
+            createTrainee: {
+                ...args
+            }
+        });
+
+        return result;
     },
     updateTrainee : (root, args, context, info)=>{
         

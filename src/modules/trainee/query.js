@@ -1,5 +1,7 @@
 const {trainee} = require('./../../service/user');
 const Mutation = require('./mutation');
+const Subscription = require('./subscription');
+
 const Query = {
     getAllTrainees : () => {
         return trainee.list()
@@ -11,7 +13,8 @@ const Query = {
 
 const traineeResolver = {
     Query,
-    Mutation
+    Mutation,
+    Subscription
 }
 
 module.exports = traineeResolver;
